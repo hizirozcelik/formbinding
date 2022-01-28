@@ -27,7 +27,6 @@
 		  
 		    <tr>
 		    
-		      <th scope="col">ID</th>
 		      <th scope="col">Movie</th>
 		      <th scope="col">Platform</th>
 		      <th scope="col">Username</th>
@@ -42,7 +41,7 @@
 		  
 		    <tr th:each="aMovie : ${movieList}">
 		    
-		      <th th:text="${aMovie.id}">55</th>
+		
 		      <td th:text="${aMovie.name}">Matrix</td>
 		      <td th:text="${aMovie.platform}">Netflix</td>
 		      <td th:text="${aMovie.userName}">Hizir Ozcelik</td>

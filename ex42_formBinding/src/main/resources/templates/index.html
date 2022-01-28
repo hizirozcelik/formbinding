@@ -1,0 +1,123 @@
+<!doctype html>
+<html xlmns:th="https://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Game World!</title>
+  </head>
+  <body>
+    <div class="container">
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">ID</th>
+		      <th scope="col">Title</th>
+		      <th scope="col">Publisher</th>
+		      <th scope="col">Platform</th>
+		      <th scope="col">Price</th>
+		      
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="aGame : ${gameList}">
+		      <th th:text="${aGame.id}">55</th>
+		      <td th:text="${aGame.title}">Yesterday</td>
+		      <td th:text="${aGame.publisher}">Paul McCartney</td>
+		      <td th:text="${aGame.platform}">Classical</td>
+		      <td th:text="${aGame.price}">150.55</td>
+		    </tr>
+		    
+		  </tbody>
+		</table>
+    
+       <br />
+   <form method ="post" action="#" th:action="@{/addGame}" th:object=${game}>
+   
+   	<div class="form-group gt-3">
+   	
+   		<div class="row">
+   		
+   			<!-- <div class="col-md-2 form-group">
+   			
+   				<label for="id" class="form-label">ID</label>
+	   			<input type="number" class="form-control" th:field="*{id}" />
+	   			
+   			</div> -->
+   			
+   			<div class="col-md-3 form-group">
+   			
+	   			<label for="title" class="form-label">Title</label>
+	   			<input type="text" class="form-control" th:field="*{title}" />
+	   			
+   			</div>
+   			
+   			<div class="col-md-3 form-group">
+   			
+	   			<label for="publisher" class="form-label">Publisher</label>
+	   			<input type="text" class="form-control" th:field="*{publisher}" />
+	   			
+   			</div>
+   			
+   			<div class="col-md-2 form-group">
+   			
+	   				   			
+	   			<label for="platform" class="form-label">Platform</label>
+	   			
+	   			<select class="form-select" th:field="*{platform}">
+	   			
+        			<option th:each="g : *{platforms}" th:value="${g}" th:text="${g}" ></option>
+        			
+      			</select>
+   			
+   			</div>
+   			
+   			<div class="col-md-2 form-group">
+   			
+	   			<label for="price" class="form-label">Price</label>
+	   			<input type="number" step="0.01" class="form-control" th:field="*{price}" />
+	   			
+   			</div>
+   			   			  			
+   		</div>
+   		<br />
+   		
+   		<div class="button">
+					
+			<button type="submit" class="btn btn-primary">Add Game!</button>
+					
+		</div>
+   	
+   	</div>
+	
+	</form>
+	</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
